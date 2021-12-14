@@ -32,17 +32,17 @@ namespace RESTApi.Services
 
         public async Task<Dish> GetDishAsync(int id)
         {
-            return await _dishes.Find<Dish>(dish => dish.id == id).FirstOrDefaultAsync();
+            return await _dishes.Find<Dish>(dish => dish.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task UpdateDishAsync(int id, Dish updatedDish)
         {
-            await _dishes.ReplaceOneAsync(dish => dish.id == id, updatedDish);
+            await _dishes.ReplaceOneAsync(dish => dish.Id == id, updatedDish);
         }
 
         public async Task DeleteDishAsync(int id)
         {
-            await _dishes.DeleteOneAsync(dish => dish.id == id);
+            await _dishes.DeleteOneAsync(dish => dish.Id == id);
         }
     }
 }

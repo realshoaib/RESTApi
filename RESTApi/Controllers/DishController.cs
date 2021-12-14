@@ -46,7 +46,7 @@ namespace RESTApi.Controllers
             
             if (dish is null) return NotFound();
 
-            updateDish.id = dish.id;
+            updateDish.Id = dish.Id;
 
             await _dishService.UpdateDishAsync(id, updateDish);
 
